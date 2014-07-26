@@ -5,18 +5,21 @@
 ## Login   <paumar_a@epitech.net>
 ## 
 ## Started on  Sun Jul 20 00:53:21 2014 cedric paumard
-## Last update Sat Jul 26 15:41:29 2014 cedric paumard
+## Last update Sat Jul 26 22:02:50 2014 cedric paumard
 ##
 
 SRCS	=	main.cpp \
-		Menu.cpp \
+		Main.cpp \
+		Menu/Menu.cpp \
+		Menu/Param.cpp \
+		Menu/Param_getter.cpp \
 
 OBJ	=	$(SRCS:.cpp=.o)
 
 NAME	=	shootandrun
 
 CXXFLAGS+=	-Wall -Wextra -Werror
-CXXFLAGS+=	-I Unit -I Map -I Graph -I External_Objects/SFML-2.1/Include/SFML
+CXXFLAGS+=	-I Menu -I External_Objects/SFML-2.1/Include/SFML
 
 all	:	$(NAME)
 
