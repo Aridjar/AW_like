@@ -1,0 +1,60 @@
+Class conteneur => contient les 3 classes emplacement, la class
+|
+|- Class Param
+|
+|- Class Emplacemement
+|  |- Class Menu => à droite, contient le menu (reprendre le jeu, quitter, passer son tour)
+|  |- Class carte => contient deux liste de sprite, l'une pour la carte, l'autre pour les objets se déplaçant.
+|  |- Class selection => selectionne une unité et affiche ses informations et les options de jeux possibles.
+|
+|- Class affichage => Contient des informations et la classe texture
+|  |- Class Texture => pour eviter les cases blanches sur une evaporation d'adresse
+|  |- Class Move => pour surligner les déplacement ou l'unite peu aller
+|  |- Class Attack => pour surligner les cases ou l'unite peu attaquer
+|
+|- Class Event => pour gerer les evenements
+|  |- Class Curseur => pour avoir la position du curseur et son déplacement
+|  |- Class Clavier => pour gerer les evenements au clavier
+|  |- Class Souris => pour gerer les evenements a la souris
+|
+|- Class unit => pour avoir une classe parrent
+|  |- Tank
+|  |- Berserk
+|  |- Lance Missile
+|  |- Helico
+|
+|- Class Map =>
+|- Class Case =>
+
+
+Menu
+|- Choix de la carte
+|  |- < Carte >
+|  |  |- Random
+|  |  |	 |- Size_x []
+|  |  |	 |- Size_Y []
+|  |  |	 |- Size_Rand []
+|  |  |
+|  |  |- Carte_name
+|  |  
+|  |- < Unit >
+|  |  |- Basic (cart_unit or random)
+|  |  |- Unit_Type []
+|  |  |- Random
+|  |
+|  |- < IA >
+|  |  |- Joueur
+|  |  |- Facile
+|  |  |- Moyenne
+|  |  |- Difficile
+|  |
+|  |- < Brouillard >
+|  |  |- Activé
+|  |  |- Desactivé
+|  |
+|  |- Lancer
+|  |
+|  |- Retour
+|
+|- Quitter
+
