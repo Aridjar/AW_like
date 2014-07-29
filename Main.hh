@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Fri Jul 25 18:08:05 2014 cedric paumard
-// Last update Sat Jul 26 21:43:21 2014 cedric paumard
+// Last update Mon Jul 28 13:08:04 2014 cedric paumard
 //
 
 #ifndef MAIN_HH_
@@ -21,19 +21,19 @@
 ** define
 */
 
-# define	VIDEO_GAME_NAME "AW_Like"
+# define VIDEO_GAME_NAME	"AW_Like"
 
-# define	SIZE_WINDOW_X 1680
-# define	SIZE_WINDOW_Y 1080
+# define SIZE_WINDOW_X		1680
+# define SIZE_WINDOW_Y		1050
 
 /*
 ** enum
 */
 
-enum	position
+enum	e_graph_position
   {
-    MENU = 0,
-    GAME,
+    GP_MENU = 0,
+    GP_GAME,
   };
 
 /*
@@ -43,15 +43,18 @@ enum	position
 class	Main
 {
   sf::RenderWindow	_window;
-  int			_position;
+  e_graph_position	_position;
+  MyTexture		_texture;
+  MyText		_text;
+  Menu			_menu;
 
 public:
-  Menu			_menu;
 
   Main();
   ~Main();
 
-  // int	beginGame();
+  int	beginGame();
+  void	drawMenu();
 };
 
 #endif /* !MAIN_HH_ */

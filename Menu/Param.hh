@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Fri Jul 25 18:05:59 2014 cedric paumard
-// Last update Sat Jul 26 22:02:00 2014 cedric paumard
+// Last update Sun Jul 27 13:51:50 2014 cedric paumard
 //
 
 #ifndef PARAM_HH_
@@ -22,9 +22,9 @@
 */
 
 # define RANDOM		"random"
-# define MAX_SIZE_X	100
+# define MAX_SIZE_X	50
 # define MIN_SIZE_X	20
-# define MAX_SIZE_Y	100
+# define MAX_SIZE_Y	50
 # define MIN_SIZE_Y	20
 
 # define BEGIN_MAP	"External_Objects/Map/map_01.map"
@@ -45,7 +45,8 @@ enum e_map_type
     MT_FOREST,
     MT_MOUNTAIN,
     MT_PLAIN,
-    MT_SWAMP
+    MT_SWAMP,
+    MT_ROAD
   };
 
 enum e_ai
@@ -85,6 +86,7 @@ public:
   void	assignUnit(const std::string);
   void	assignMap(const std::string);
 
+  // the following fonctions are in the Param_getter.cpp file
   std::map<std::string, int>	getUnit(void)const;
   std::string			getMap(void)const;
   e_map_type			getTypeName(void)const;

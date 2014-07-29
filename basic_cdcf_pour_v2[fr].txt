@@ -30,21 +30,12 @@ Class conteneur => contient les 3 classes emplacement, la class
 Menu
 |- Choix de la carte
 |  |- Carte
-|  |  |- < map_name > contient random;
-|  |  |- Random
-|  |  |	 |- < size >
-|  |  |	 |  |- Choose_size
-|  |  |  |  |  |- < size_x > (min 20 max 100)
-|  |  |  |  |  |- < size_y > (min 20 max 100)
-|  |  |	 |  |
-|  |  |  |  |- random 
+|  |  |- < map_name > contient random; Si random : 
+|  |  |	 |- < size > (can be random) Choose_size if (size != random)
+|  |  |  |  |- < size_x > (min 20 max 100)
+|  |  |  |  |- < size_y > (min 20 max 100)
 |  |  |	 |
-|  |  |	 |- type of map
-|  |  |	 |  |- Choose_type
-|  |  |	 |  |  |- < type >
-|  |  |	 |  |  |- < Number > (min 0 max size x * size y / 10)
-|  |  |	 |  |
-|  |  |	 |  |- random
+|  |  |	 |- < type > (can be random
 |  |  |
 |  |  |- apperçu
 |  |
@@ -52,7 +43,7 @@ Menu
 |  |- Unit
 |  |  |- Basic (cart_unit or random)
 |  |  |- < Unit_Type >
-|  |  |	 |- number
+|  |  |	 |- < number > (min 0 max size x * size y / 10)
 |  |  |
 |  |  |- Random
 |  |

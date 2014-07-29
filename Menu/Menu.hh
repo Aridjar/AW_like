@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 15:48:23 2014 cedric paumard
-// Last update Sat Jul 26 21:45:34 2014 cedric paumard
+// Last update Mon Jul 28 18:00:13 2014 cedric paumard
 //
 
 #ifndef MENU_HH_
@@ -16,30 +16,46 @@
 */
 
 # include "Param.hh"
-# include <SFML/Graphics.hpp>
-# include <SFML/Window.hpp>
+# include "MyTexture.hh"
+# include "MyText.hh"
+
+# include <list>
+
+/*
+** define
+*/
+
+# define RANDOM_NB = -1
 
 /*
 ** enum
 */
 
-enum	position_menu
+enum	e_position_menu
   {
-    SELECT_MAP = 0,
-    SELECT_MAP_RANDOM,
-    SELECT_MAP_SIZE_X,
-    SELECT_MAP_SIZE_Y,
-    SELECT_MAP_SIZE_RAND,
-    SELECT_MAP_TYPE_DEFINE,
-    SELECT_MAP_TYPE_RAND,
-    SELECT_MAP_VIEW,
-    SELECT_UNIT,
-    SELECT_UNIT_CONF,
-    SELECT_UNIT_RAND,
-    SELECT_IA,
-    SELECT_FOG,
-    SELECT_LAUNCH,
-    SELECT_RETURN,
+    PM_ENTER = 0,
+    PM_CHOOSE,
+    PM_MAP,
+    PM_UNIT,
+  };
+
+enum	e_position_curs
+  {
+    PC_CHOOSE = 0,
+    PC_RETURN,
+    PC_MAP_ADVANCED,
+    PC_MAP,
+    PC_SIZE_X,
+    PC_SIZE_Y,
+    PC_TYPE,
+    PC_VIEW,
+    PC_UNIT,
+    PC_UNIT_TYPE,
+    PC_NUMBER,
+    PC_IA,
+    PC_FOG,
+    PC_LAUNCH,
+    PC_EXIT
   };
   
 /*
@@ -48,16 +64,30 @@ enum	position_menu
 
 class	Menu
 {
+  std::list<e_position_menu>	_position;
+  std::list<sf::Sprite>	_curseur;   //list curseur (push_front && pop front, n'afficher que le premier)
+  std::list<sf::Text>	_text;
   sf::RenderWindow	*_window;
-  int			position;
+  MyTexture		_texture;
+  MyText		_all_text;
+  Param			_param;
+
+  //liste de texte
+  //liste des fleches
+  
 
 public:
-  Param			_param;
 
   Menu();
   ~Menu();
 
-  //setWindow(sf::RenderWindow)
+  void			initGame();
+  void			modifyText();
+  // void			keyPressed(int);
+
+  void			setWindow(sf::RenderWindow&);
+  void			setTexture(MyTexture&);
+  void			setText(MyText&);
 };
 
 #endif /* !MENU_HH_ */
