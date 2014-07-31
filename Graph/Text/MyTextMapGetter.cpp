@@ -5,32 +5,32 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 12:30:31 2014 cedric paumard
-// Last update Tue Jul 29 12:14:07 2014 cedric paumard
+// Last update Tue Jul 29 17:23:03 2014 cedric paumard
 //
 
 #include "MyText.hh"
 
-sf::Text	&MyText::getMapName(void)
+const sf::Text	&MyText::getMapName(void)const
 {
   return (this->_map_name);
 }
 
-sf::Text	&MyText::getMapSizeX(void)
+const sf::Text	&MyText::getMapSizeX(void)const
 {
   return (this->_map_sizex);
 }
 
-sf::Text	&MyText::getMapSizeY(void)
+const sf::Text	&MyText::getMapSizeY(void)const
 {
   return (this->_map_sizey);
 }
 
-sf::Text	&MyText::getMapType(void)
+const sf::Text	&MyText::getMapType(void)const
 {
   return (this->_map_type);
 }
 
-sf::Text	&MyText::getMapVisu(void)
+const sf::Text	&MyText::getMapVisu(void)const
 {
   return (this->_map_visu);
 }

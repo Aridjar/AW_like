@@ -5,47 +5,47 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 12:13:24 2014 cedric paumard
-// Last update Tue Jul 29 16:09:23 2014 cedric paumard
+// Last update Tue Jul 29 17:22:49 2014 cedric paumard
 //
 
 #include "MyText.hh"
 
-sf::Text	&MyText::getUnitNumber(void)
+const sf::Text	&MyText::getUnitNumber(void)const
 {
   return (this->_unit_number);
 }
 
-sf::Text	&MyText::getUnitName(void)
+const sf::Text	&MyText::getUnitName(void)const
 {
   return (this->_unit_name);
 }
 
-sf::Text	&MyText::getUnitTank(void)
+const sf::Text	&MyText::getUnitTank(void)const
 {
   return (this->_unit_tank);
 }
 
-sf::Text	&MyText::getUnitMiss(void)
+const sf::Text	&MyText::getUnitMiss(void)const
 {
   return (this->_unit_miss);
 }
 
-sf::Text	&MyText::getUnitBers(void)
+const sf::Text	&MyText::getUnitBers(void)const
 {
   return (this->_unit_bers);
 }
 
-sf::Text	&MyText::getUnitBaso(void)
+const sf::Text	&MyText::getUnitBaso(void)const
 {
   return (this->_unit_baso);
 }
 
-sf::Text	&MyText::getUnitJeep(void)
+const sf::Text	&MyText::getUnitJeep(void)const
 {
   return (this->_unit_jeep);
 }
 
-sf::Text	&MyText::getUnitHeli(void)
+const sf::Text	&MyText::getUnitHeli(void)const
 {
   return (this->_unit_heli);
 }

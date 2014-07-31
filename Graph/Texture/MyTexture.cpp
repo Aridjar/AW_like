@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 09:21:27 2014 cedric paumard
-// Last update Mon Jul 28 18:08:47 2014 cedric paumard
+// Last update Wed Jul 30 15:45:44 2014 cedric paumard
 //
 
 #include "MyTexture.hh"
@@ -115,14 +115,14 @@ MyTexture	&MyTexture::operator=(MyTexture &_texture)
 
 void	MyTexture::initMenu()
 {
-  // if (!this->_menu_select.loadFromFile(PIC_SELE_MENU))
-  //   std::cerr << "Load menu's select failed.\n" << std::endl;
-  // if (!this->_menu_rarrow.loadFromFile(PIC_SELE_LARR))
-  //   std::cerr << "Load menu's left arrow failed.\n" << std::endl;
-  // if (!this->_menu_larrow.loadFromFile(PIC_SELE_RARR))
-  //   std::cerr << "Load menu's right arrow failed.\n" << std::endl;
-  // if (!this->_menu_back.loadFromFile(PIC_SELE_BACK))
-  //   std::cerr << "Load menu's background failed.\n" << std::endl;
+  if (!this->_menu_select.loadFromFile(PIC_SELE_MENU))
+    std::cerr << "Load menu's select failed.\n" << std::endl;
+  if (!this->_menu_rarrow.loadFromFile(PIC_SELE_LARR))
+    std::cerr << "Load menu's left arrow failed.\n" << std::endl;
+  if (!this->_menu_larrow.loadFromFile(PIC_SELE_RARR))
+    std::cerr << "Load menu's right arrow failed.\n" << std::endl;
+  if (!this->_menu_back.loadFromFile(PIC_SELE_BACK))
+    std::cerr << "Load menu's background failed.\n" << std::endl;
 
   if (!this->_menu_back_select.loadFromFile(PIC_MENU_CHOS))
     std::cerr << "Load menu's background selection failed.\n" << std::endl;

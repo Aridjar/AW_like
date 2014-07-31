@@ -5,37 +5,37 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 12:14:14 2014 cedric paumard
-// Last update Mon Jul 28 18:13:45 2014 cedric paumard
+// Last update Wed Jul 30 12:00:17 2014 cedric paumard
 //
 
 #include "MyTexture.hh"
 
-// sf::Texture	*MyTexture::getMenuSelect(void)const
-// {
-//   return (&this->_menu_select);
-// }
+const sf::Texture	&MyTexture::getMenuSelect(void)const
+{
+  return (this->_menu_select);
+}
 
-// sf::Texture	*MyTexture::getMenuRArrow(void)const
-// {
-//   return (&this->_menu_rarrow);
-// }
+const sf::Texture	&MyTexture::getMenuRArrow(void)const
+{
+  return (this->_menu_rarrow);
+}
 
-// sf::Texture	*MyTexture::getMenuLArrow(void)const
-// {
-//   return (&this->_menu_larrow);
-// }
+const sf::Texture	&MyTexture::getMenuLArrow(void)const
+{
+  return (this->_menu_larrow);
+}
 
-// sf::Texture	*MyTexture::getMenuBack(void)const
-// {
-//   return (&this->_menu_back);
-// }
+const sf::Texture	&MyTexture::getMenuBack(void)const
+{
+  return (this->_menu_back);
+}
 
-sf::Texture	&MyTexture::getMenuBackSelect(void)
+const sf::Texture	&MyTexture::getMenuBackSelect(void)const
 {
   return (this->_menu_back_select);
 }
 
-sf::Texture	&MyTexture::getMenuBackOpen(void)
+const sf::Texture	&MyTexture::getMenuBackOpen(void)const
 {
   return (this->_menu_back_open);
 }

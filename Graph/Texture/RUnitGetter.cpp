@@ -5,37 +5,37 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 12:27:19 2014 cedric paumard
-// Last update Sun Jul 27 19:43:36 2014 cedric paumard
+// Last update Tue Jul 29 17:24:04 2014 cedric paumard
 //
 
 #include "MyTexture.hh"
 
-sf::Texture	*MyTexture::getRUnitTank(void)const
+const sf::Texture	&MyTexture::getRUnitTank(void)const
 {
-  return (&this->_unit_tank_r);
+  return (this->_unit_tank_r);
 }
 
-sf::Texture	*MyTexture::getRUnitBers(void)const
+const sf::Texture	&MyTexture::getRUnitBers(void)const
 {
-  return (&this->_unit_bers_r);
+  return (this->_unit_bers_r);
 }
 
-sf::Texture	*MyTexture::getRUnitHeli(void)const
+const sf::Texture	&MyTexture::getRUnitHeli(void)const
 {
-  return (&this->_unit_heli_r);
+  return (this->_unit_heli_r);
 }
 
-sf::Texture	*MyTexture::getRUnitMiss(void)const
+const sf::Texture	&MyTexture::getRUnitMiss(void)const
 {
-  return (&this->_unit_miss_r);
+  return (this->_unit_miss_r);
 }
 
-sf::Texture	*MyTexture::getRUnitBaso(void)const
+const sf::Texture	&MyTexture::getRUnitBaso(void)const
 {
-  return (&this->_unit_baso_r);
+  return (this->_unit_baso_r);
 }
 
-sf::Texture	*MyTexture::getRUnitJeep(void)const
+const sf::Texture	&MyTexture::getRUnitJeep(void)const
 {
-  return (&this->_unit_jeep_r);
+  return (this->_unit_jeep_r);
 }

@@ -5,47 +5,52 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 12:24:25 2014 cedric paumard
-// Last update Tue Jul 29 16:08:01 2014 cedric paumard
+// Last update Tue Jul 29 20:39:32 2014 cedric paumard
 //
 
 #include "MyText.hh"
 
-sf::Text	&MyText::getMenu(void)
+const sf::Text	&MyText::getMenu(void)const
 {
   return (this->_menu);
 }
 
-sf::Text	&MyText::getGame(void)
+const sf::Text	&MyText::getGame(void)const
 {
   return (this->_game);
 }
 
-sf::Text	&MyText::getUnit(void)
+const sf::Text	&MyText::getUnit(void)const
 {
   return (this->_unit);
 }
 
-sf::Text	&MyText::getAI(void)
+const sf::Text	&MyText::getAI(void)const
 {
   return (this->_ai);
 }
 
-sf::Text	&MyText::getFog(void)
+const sf::Text	&MyText::getFog(void)const
 {
   return (this->_fog);
 }
 
-sf::Text	&MyText::getLaunch(void)
+const sf::Text	&MyText::getLaunch(void)const
 {
   return (this->_launch);
 }
 
-sf::Text	&MyText::getReturn(void)
+const sf::Text	&MyText::getReturn(void)const
 {
   return (this->_return);
 }
 
-sf::Text	&MyText::getExit(void)
+const sf::Text	&MyText::getExit(void)const
 {
   return (this->_exit);
+}
+
+const sf::Text	&MyText::getCredit(void)const
+{
+  return (this->_credit);
 }

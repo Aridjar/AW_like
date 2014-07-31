@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 10:55:19 2014 cedric paumard
-// Last update Mon Jul 28 18:32:42 2014 cedric paumard
+// Last update Tue Jul 29 20:43:51 2014 cedric paumard
 //
 
 #include "MyText.hh"
@@ -34,6 +34,7 @@ void	MyText::initMenu()
 {
   this->_menu.setFont(this->_font);
   this->_menu.setString(TEXT_MENU);
+  this->_menu.setCharacterSize(80);
   this->_game.setFont(this->_font);
   this->_game.setString(TEXT_GAME);
   this->_unit.setFont(this->_font);
@@ -48,6 +49,10 @@ void	MyText::initMenu()
   this->_return.setString(TEXT_RETURN);
   this->_exit.setFont(this->_font);
   this->_exit.setString(TEXT_EXIT);
+  this->_exit.setCharacterSize(80);
+  this->_credit.setFont(this->_font);
+  this->_credit.setString(TEXT_CRED);
+  this->_credit.setCharacterSize(80);
 }
 
 void	MyText::initMap()

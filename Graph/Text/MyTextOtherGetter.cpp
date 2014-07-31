@@ -5,38 +5,38 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 12:36:44 2014 cedric paumard
-// Last update Tue Jul 29 16:09:00 2014 cedric paumard
+// Last update Tue Jul 29 17:22:57 2014 cedric paumard
 //
 
 #include "MyText.hh"
 
-sf::Text	&MyText::getAIEasy(void)
+const sf::Text	&MyText::getAIEasy(void)const
 {
   return (this->_ai_easy);
 }
 
-sf::Text	&MyText::getAIMedium(void)
+const sf::Text	&MyText::getAIMedium(void)const
 {
   return (this->_ai_medium);
 }
 
-sf::Text	&MyText::getAIHard(void)
+const sf::Text	&MyText::getAIHard(void)const
 {
   return (this->_ai_hard);
 }
 
-sf::Text	&MyText::getAIPlayer(void)
+const sf::Text	&MyText::getAIPlayer(void)const
 {
   return (this->_ai_player);
 }
 
 
-sf::Text	&MyText::getFogWith(void)
+const sf::Text	&MyText::getFogWith(void)const
 {
   return (this->_fog_with);
 }
 
-sf::Text	&MyText::getFogWithout(void)
+const sf::Text	&MyText::getFogWithout(void)const
 {
   return (this->_fog_without);
 }

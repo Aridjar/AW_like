@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 09:21:24 2014 cedric paumard
-// Last update Mon Jul 28 18:13:54 2014 cedric paumard
+// Last update Wed Jul 30 15:48:09 2014 cedric paumard
 //
 
 #ifndef MYTEXTURE_HH_
@@ -68,10 +68,10 @@
 ** define the path of menu
 */
 
-// # define PIC_SELE_MENU	"External_Objects/Pictures/Menu/"
-// # define PIC_SELE_LARR	"External_Objects/Pictures/Menu/"
-// # define PIC_SELE_RARR	"External_Objects/Pictures/Menu/"
-// # define PIC_SELE_BACK	"External_Objects/Pictures/Menu/"
+# define PIC_SELE_MENU	"External_Objects/Pictures/Menu/cadre_visualisation_menu.png"
+# define PIC_SELE_LARR	"External_Objects/Pictures/Menu/gauche.png"
+# define PIC_SELE_RARR	"External_Objects/Pictures/Menu/droite.png"
+# define PIC_SELE_BACK	"External_Objects/Pictures/Menu/cadre_visualisation_selection.png"
 # define PIC_MENU_OPEN	"External_Objects/Pictures/Menu/visualisation_menu.jpg"
 # define PIC_MENU_CHOS	"External_Objects/Pictures/Menu/visualisation_selection.jpg"
 
@@ -131,11 +131,10 @@ class MyTexture
   // sf::Texture	_bunit_bazo_b;
   // sf::Texture	_bunit_jeep_b;
 
-  // sf::Texture	_menu_select;
-  // sf::Texture	_menu_rarrow;
-  // sf::Texture	_menu_larrow;
-  // sf::Texture	_menu_back;
-
+  sf::Texture	_menu_select;
+  sf::Texture	_menu_rarrow;
+  sf::Texture	_menu_larrow;
+  sf::Texture	_menu_back;
   sf::Texture	_menu_back_select;
   sf::Texture	_menu_back_open;
 
@@ -165,63 +164,63 @@ public:
 
   // getters list
   // CaseGetter.cpp
-  // sf::Texture	*getCaseMoun(void)const;
-  // sf::Texture	*getCasePlai(void)const;
-  // sf::Texture	*getCaseRive(void)const;
-  // sf::Texture	*getCaseFore(void)const;
-  // sf::Texture	*getCaseCity(void)const;
-  // sf::Texture	*getCaseRoad(void)const;
+  // const sf::Texture	&getCaseMoun(void)const;
+  // const sf::Texture	&getCasePlai(void)const;
+  // const sf::Texture	&getCaseRive(void)const;
+  // const sf::Texture	&getCaseFore(void)const;
+  // const sf::Texture	&getCaseCity(void)const;
+  // const sf::Texture	&getCaseRoad(void)const;
 
   // RUnitGetter.cpp
-  // sf::Texture	*getRUnitTank(void)const;
-  // sf::Texture	*getRUnitBers(void)const;
-  // sf::Texture	*getRUnitHeli(void)const;
-  // sf::Texture	*getRUnitMiss(void)const;
-  // sf::Texture	*getRUnitBazo(void)const;
-  // sf::Texture	*getRUnitJeep(void)const;
+  // const sf::Texture	&getRUnitTank(void)const;
+  // const sf::Texture	&getRUnitBers(void)const;
+  // const sf::Texture	&getRUnitHeli(void)const;
+  // const sf::Texture	&getRUnitMiss(void)const;
+  // const sf::Texture	&getRUnitBazo(void)const;
+  // const sf::Texture	&getRUnitJeep(void)const;
 
   // BUnitGetter.cpp
-  // sf::Texture	*getBUnitTank(void)const;
-  // sf::Texture	*getBUnitBers(void)const;
-  // sf::Texture	*getBUnitHeli(void)const;
-  // sf::Texture	*getBUnitMiss(void)const;
-  // sf::Texture	*getBUnitBazo(void)const;
-  // sf::Texture	*getBUnitJeep(void)const;
+  // const sf::Texture	&getBUnitTank(void)const;
+  // const sf::Texture	&getBUnitBers(void)const;
+  // const sf::Texture	&getBUnitHeli(void)const;
+  // const sf::Texture	&getBUnitMiss(void)const;
+  // const sf::Texture	&getBUnitBazo(void)const;
+  // const sf::Texture	&getBUnitJeep(void)const;
 
   // RBUnitGetter.cpp
-  // sf::Texture	*getRUnitTank(void)const;
-  // sf::Texture	*getRUnitBers(void)const;
-  // sf::Texture	*getRUnitHeli(void)const;
-  // sf::Texture	*getRUnitMiss(void)const;
-  // sf::Texture	*getRUnitBazo(void)const;
-  // sf::Texture	*getRUnitJeep(void)const;
+  // const sf::Texture	&getRUnitTank(void)const;
+  // const sf::Texture	&getRUnitBers(void)const;
+  // const sf::Texture	&getRUnitHeli(void)const;
+  // const sf::Texture	&getRUnitMiss(void)const;
+  // const sf::Texture	&getRUnitBazo(void)const;
+  // const sf::Texture	&getRUnitJeep(void)const;
 
   // BBUnitGetter.cpp
-  // sf::Texture	*getBUnitTank(void)const;
-  // sf::Texture	*getBUnitBers(void)const;
-  // sf::Texture	*getBUnitHeli(void)const;
-  // sf::Texture	*getBUnitMiss(void)const;
-  // sf::Texture	*getBUnitBazo(void)const;
-  // sf::Texture	*getBUnitJeep(void)const;
+  // const sf::Texture	&getBUnitTank(void)const;
+  // const sf::Texture	&getBUnitBers(void)const;
+  // const sf::Texture	&getBUnitHeli(void)const;
+  // const sf::Texture	&getBUnitMiss(void)const;
+  // const sf::Texture	&getBUnitBazo(void)const;
+  // const sf::Texture	&getBUnitJeep(void)const;
 
   // MenuGetter.cpp
-  // sf::Texture	*getMenuSelect(void)const;
-  // sf::Texture	*getMenuRArrow(void)const;
-  // sf::Texture	*getMenuLArrow(void)const;
-  // sf::Texture	*getMenuBack(void)const;
-  sf::Texture	&getMenuBackSelect(void);
-  sf::Texture	&getMenuBackOpen(void);
+  const sf::Texture	&getMenuSelect(void)const;
+  const sf::Texture	&getMenuRArrow(void)const;
+  const sf::Texture	&getMenuLArrow(void)const;
+  const sf::Texture	&getMenuBack(void)const;
+  const sf::Texture	&getMenuBackSelect(void)const;
+  const sf::Texture	&getMenuBackOpen(void)const;
 
   // GameGetter.cpp
-  // sf::Texture	*getGameSelectCurs(void)const;
-  // sf::Texture	*getGameAttackCurs(void)const;
-  // sf::Texture	*getGamMoveFoge(void)const;
-  // sf::Texture	*getGameAttackFog(void)const;
-  // sf::Texture	*getGameVisuFog(void)const;
-  // sf::Texture	*getGameRedBack(void)const;
-  // sf::Texture	*getGameBlueBack(void)const;
-  // sf::Texture	*getGameRightBack(void)const;
-  // sf::Texture	*getGameLeftBack(void)const;
+  // const sf::Texture	&getGameSelectCurs(void)const;
+  // const sf::Texture	&getGameAttackCurs(void)const;
+  // const sf::Texture	&getGamMoveFoge(void)const;
+  // const sf::Texture	&getGameAttackFog(void)const;
+  // const sf::Texture	&getGameVisuFog(void)const;
+  // const sf::Texture	&getGameRedBack(void)const;
+  // const sf::Texture	&getGameBlueBack(void)const;
+  // const sf::Texture	&getGameRightBack(void)const;
+  // const sf::Texture	&getGameLeftBack(void)const;
 };
 
 #endif /* !MYTEXTURE_HH_ */

@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 15:48:23 2014 cedric paumard
-// Last update Mon Jul 28 18:00:13 2014 cedric paumard
+// Last update Thu Jul 31 14:21:04 2014 cedric paumard
 //
 
 #ifndef MENU_HH_
@@ -25,7 +25,11 @@
 ** define
 */
 
-# define RANDOM_NB = -1
+# define RANDOM_NB -1
+
+# define DIS_MENU_SELECT_X 503
+# define DIS_MENU_SELECT_Y 320
+# define DIS_MENU_SELECT_DIF 120
 
 /*
 ** enum
@@ -39,55 +43,46 @@ enum	e_position_menu
     PM_UNIT,
   };
 
-enum	e_position_curs
-  {
-    PC_CHOOSE = 0,
-    PC_RETURN,
-    PC_MAP_ADVANCED,
-    PC_MAP,
-    PC_SIZE_X,
-    PC_SIZE_Y,
-    PC_TYPE,
-    PC_VIEW,
-    PC_UNIT,
-    PC_UNIT_TYPE,
-    PC_NUMBER,
-    PC_IA,
-    PC_FOG,
-    PC_LAUNCH,
-    PC_EXIT
-  };
-  
 /*
 ** class
 */
 
 class	Menu
 {
-  std::list<e_position_menu>	_position;
+  std::vector<Menu>	_graph;
+  sf::RenderWindow	*_window;
+  e_position_menu	_position;
+  std::list<int>	_pos2;
+
+protected:
+  std::list<sf::Sprite>	_font;
   std::list<sf::Sprite>	_curseur;   //list curseur (push_front && pop front, n'afficher que le premier)
   std::list<sf::Text>	_text;
-  sf::RenderWindow	*_window;
-  MyTexture		_texture;
   MyText		_all_text;
+  MyTexture		_texture;
   Param			_param;
 
-  //liste de texte
-  //liste des fleches
-  
-
 public:
-
   Menu();
-  ~Menu();
+  virtual ~Menu();
 
-  void			initGame();
-  void			modifyText();
+  Menu				&operator=(Menu&);
+  void				initGame();
+  virtual std::list<sf::Text>	&modifyText();
+  virtual int			modifyCurseur(int);
+  virtual int			keyPressed(int);
+
   // void			keyPressed(int);
 
-  void			setWindow(sf::RenderWindow&);
-  void			setTexture(MyTexture&);
-  void			setText(MyText&);
+  //Getters
+  const std::list<sf::Sprite>	&getBack(void)const;
+  const std::list<sf::Sprite>	&getCurs(void)const;
+  const std::list<sf::Text>	&getText(void)const;
+
+  //Setters
+  void				setWindow(sf::RenderWindow&);
+  void				setTexture(MyTexture&);
+  void				setText(MyText&);
 };
 
 #endif /* !MENU_HH_ */

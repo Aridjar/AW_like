@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 14:58:40 2014 cedric paumard
-// Last update Tue Jul 29 13:49:54 2014 cedric paumard
+// Last update Wed Jul 30 16:32:13 2014 cedric paumard
 //
 
 #ifndef MYTEXT_HH_
@@ -32,6 +32,7 @@
 # define TEXT_LAUNCH	"Launch"
 # define TEXT_RETURN	"Return"
 # define TEXT_EXIT	"Exit"
+# define TEXT_CRED	"Credit"
 
 # define TEXT_UNIT_NAME	"Name"
 # define TEXT_UNIT_NUMB	"Number"
@@ -73,6 +74,7 @@ class MyText
   sf::Text	_launch;
   sf::Text	_return;
   sf::Text	_exit;
+  sf::Text	_credit;
 
   sf::Text	_map_name;
   sf::Text	_map_sizex;
@@ -109,41 +111,42 @@ public:
   MyText &operator=(MyText&);
 
   //MyTextMenuGetter.cpp
-  sf::Text	&getMenu(void);
-  sf::Text	&getGame(void);
-  sf::Text	&getUnit(void);
-  sf::Text	&getAI(void);
-  sf::Text	&getFog(void);
-  sf::Text	&getLaunch(void);
-  sf::Text	&getReturn(void);
-  sf::Text	&getExit(void);
+  const sf::Text	&getMenu(void)const;
+  const sf::Text	&getGame(void)const;
+  const sf::Text	&getUnit(void)const;
+  const sf::Text	&getAI(void)const;
+  const sf::Text	&getFog(void)const;
+  const sf::Text	&getLaunch(void)const;
+  const sf::Text	&getReturn(void)const;
+  const sf::Text	&getExit(void)const;
+  const sf::Text	&getCredit(void)const;
 
   //MyTextMapGetter.cpp
-  sf::Text	&getMapName(void);
-  sf::Text	&getMapSizeX(void);
-  sf::Text	&getMapSizeY(void);
-  sf::Text	&getMapType(void);
-  sf::Text	&getMapVisu(void);
+  const sf::Text	&getMapName(void)const;
+  const sf::Text	&getMapSizeX(void)const;
+  const sf::Text	&getMapSizeY(void)const;
+  const sf::Text	&getMapType(void)const;
+  const sf::Text	&getMapVisu(void)const;
   
 
   //MyTextUnitGetter.cpp
-  sf::Text	&getUnitNumber(void);
-  sf::Text	&getUnitName(void);
-  sf::Text	&getUnitTank(void);
-  sf::Text	&getUnitMiss(void);
-  sf::Text	&getUnitBers(void);
-  sf::Text	&getUnitBaso(void);
-  sf::Text	&getUnitJeep(void);
-  sf::Text	&getUnitHeli(void);
+  const sf::Text	&getUnitNumber(void)const;
+  const sf::Text	&getUnitName(void)const;
+  const sf::Text	&getUnitTank(void)const;
+  const sf::Text	&getUnitMiss(void)const;
+  const sf::Text	&getUnitBers(void)const;
+  const sf::Text	&getUnitBaso(void)const;
+  const sf::Text	&getUnitJeep(void)const;
+  const sf::Text	&getUnitHeli(void)const;
 
   //MyTextOtherGetter.cpp
-  sf::Text	&getAIEasy(void);
-  sf::Text	&getAIMedium(void);
-  sf::Text	&getAIHard(void);
-  sf::Text	&getAIPlayer(void);
+  const sf::Text	&getAIEasy(void)const;
+  const sf::Text	&getAIMedium(void)const;
+  const sf::Text	&getAIHard(void)const;
+  const sf::Text	&getAIPlayer(void)const;
 
-  sf::Text	&getFogWith(void);
-  sf::Text	&getFogWithout(void);
+  const sf::Text	&getFogWith(void)const;
+  const sf::Text	&getFogWithout(void)const;
 };
 
 #endif /* !MYTEXT_HH_ */

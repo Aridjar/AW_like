@@ -5,37 +5,37 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 12:20:37 2014 cedric paumard
-// Last update Sun Jul 27 12:31:06 2014 cedric paumard
+// Last update Tue Jul 29 17:25:09 2014 cedric paumard
 //
 
 #include "MyTexture.hh"
 
-sf::Texture	*MyTexture::getCaseMoun(void)const
+const sf::Texture	&MyTexture::getCaseMoun(void)const
 {
-  return (&this->_case_mount);
+  return (this->_case_mount);
 }
 
-sf::Texture	*MyTexture::getCasePlai(void)const
+const sf::Texture	&MyTexture::getCasePlai(void)const
 {
-  return (&this->_case_plai);
+  return (this->_case_plai);
 }
 
-sf::Texture	*MyTexture::getCaseRive(void)const
+const sf::Texture	&MyTexture::getCaseRive(void)const
 {
-  return (&this->_case_rive);
+  return (this->_case_rive);
 }
 
-sf::Texture	*MyTexture::getCaseFore(void)const
+const sf::Texture	&MyTexture::getCaseFore(void)const
 {
-  return (&this->_case_fore);
+  return (this->_case_fore);
 }
 
-sf::Texture	*MyTexture::getCaseCity(void)const
+const sf::Texture	&MyTexture::getCaseCity(void)const
 {
-  return (&this->_case_city);
+  return (this->_case_city);
 }
 
-sf::Texture	*MyTexture::getCaseRoad(void)const
+const sf::Texture	&MyTexture::getCaseRoad(void)const
 {
-  return (&this->_case_road);
+  return (this->_case_road);
 }

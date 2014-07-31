@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Fri Jul 25 18:08:05 2014 cedric paumard
-// Last update Mon Jul 28 13:08:04 2014 cedric paumard
+// Last update Wed Jul 30 18:33:29 2014 cedric paumard
 //
 
 #ifndef MAIN_HH_
@@ -15,7 +15,7 @@
 ** includes
 */
 
-# include "Menu.hh"
+# include "MyEvent.hh"
 
 /*
 ** define
@@ -27,16 +27,6 @@
 # define SIZE_WINDOW_Y		1050
 
 /*
-** enum
-*/
-
-enum	e_graph_position
-  {
-    GP_MENU = 0,
-    GP_GAME,
-  };
-
-/*
 ** class
 */
 
@@ -45,6 +35,7 @@ class	Main
   sf::RenderWindow	_window;
   e_graph_position	_position;
   MyTexture		_texture;
+  MyEvent		_event;
   MyText		_text;
   Menu			_menu;
 
