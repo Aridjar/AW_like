@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 20 00:53:23 2014 cedric paumard
-// Last update Mon Jul 28 12:48:29 2014 cedric paumard
+// Last update Fri Aug  1 23:14:18 2014 cedric paumard
 //
 
 #include "Main.hh"
@@ -15,6 +15,6 @@ int	main()
 {
   Main	_main;
 
-  // srand(time(NULL));
-  return (_main.beginGame());
+  _main.beginGame();
+  return (0);
 }

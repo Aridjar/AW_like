@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 17:42:38 2014 cedric paumard
-// Last update Thu Jul 31 14:21:52 2014 cedric paumard
+// Last update Fri Aug  1 23:35:25 2014 cedric paumard
 //
 
 #include "Menu.hh"
@@ -14,13 +14,14 @@
 
 Menu::Menu()
 {
-
   this->_position = PM_ENTER;
   this->_pos2.push_front(0);
 }
 
 Menu::~Menu()
 {
+  if (this->_graph.size() != 0)
+    delete (this->_graph[0]);
 }
 
 Menu	&Menu::operator=(Menu &menu)
@@ -28,37 +29,15 @@ Menu	&Menu::operator=(Menu &menu)
   return (menu);
 }
 
-int	Menu::modifyCurseur(int key)
+std::list<sf::Sprite>	&Menu::modifyCurseur(int key)
 {
-  const	sf::Texture	&sele = this->_texture.getMenuSelect();
-  sf::Sprite		sprite;
-
-  if (key == sf::Keyboard::Up || key == sf::Keyboard::Down ||
-      key == sf::Keyboard::Escape || key == sf::Keyboard::Return)
-    {
-      this->_curseur.pop_front();
-      if (key == sf::Keyboard::Escape || (key == sf::Keyboard::Return && this->_pos2.front() == 4))
-	{
-	  this->_pos2.pop_front();
-	  return (-1);
-	}
-      else if (key == sf::Keyboard::Down && this->_pos2.front() + 2 <= 4)
-	this->_pos2.front() += 2;
-      else if (key == sf::Keyboard::Up && this->_pos2.front() - 2 >= 0)
-	this->_pos2.front() -= 2;
-    }
-
-  sprite.setTexture(sele);
-  sprite.setPosition(sf::Vector2f(DIS_MENU_SELECT_X,
-				  DIS_MENU_SELECT_Y +
-				  DIS_MENU_SELECT_DIF * this->_pos2.front()));
-  this->_curseur.push_front(sprite);
-  return (0);
+  this->_curseur = this->_graph[this->_position]->modifyCurseur(key);
+  return (this->_curseur);
 }
 
 std::list<sf::Text>	&Menu::modifyText()
 {
-  this->_text = _graph[this->_position].modifyText();
+  this->_text = _graph[this->_position]->modifyText();
   return (this->_text);
 }
 
@@ -68,9 +47,10 @@ int	Menu::keyPressed(int key)
     this->modifyCurseur(key);
   else if (key == sf::Keyboard::Return || key == sf::Keyboard::Escape)
     {
-      if (this->modifyCurseur(key) == -1 && this->_position == PM_ENTER)
+      this->modifyCurseur(key);
+      if (this->_curseur.size() == 0)
 	return (-1);
-    }    
+    }
   else if  (key == sf::Keyboard::Left || key == sf::Keyboard::Right)
     std::cout << "Hard" << std::endl;
   // this->modifyInfo(key);
@@ -83,7 +63,7 @@ void	Menu::initGame()
   const	sf::Texture	&sele = this->_texture.getMenuSelect();
   sf::Sprite		sprite;
   
-  this->_graph.push_back(MenuBase());
+  this->_graph.push_back(new MenuBase());
 
   sprite.setTexture(back);
   sprite.setPosition(sf::Vector2f(0, 0));
