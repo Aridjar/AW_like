@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 12:24:25 2014 cedric paumard
-// Last update Tue Jul 29 20:39:32 2014 cedric paumard
+// Last update Sat Aug  2 12:37:57 2014 cedric paumard
 //
 
 #include "MyText.hh"
@@ -33,6 +33,11 @@ const sf::Text	&MyText::getAI(void)const
 const sf::Text	&MyText::getFog(void)const
 {
   return (this->_fog);
+}
+
+const sf::Text	&MyText::getVisu(void)const
+{
+  return (this->_visu);
 }
 
 const sf::Text	&MyText::getLaunch(void)const

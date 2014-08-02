@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 17:42:38 2014 cedric paumard
-// Last update Sat Aug  2 03:12:56 2014 cedric paumard
+// Last update Sat Aug  2 11:56:54 2014 cedric paumard
 //
 
 #include "MenuBase.hpp"
@@ -66,7 +66,7 @@ int	Menu::keyPressed(int key)
 void	Menu::initGame()
 {
   this->_graph.push_back(new MenuBase(&this->_font, &this->_curseur, &this->_text));
-  // this->_graph.push_back(new MenuChoose(&this->_font, &this->_curseur, &this->_text));
+  this->_graph.push_back(new MenuChoose(&this->_font, &this->_curseur, &this->_text));
   this->modifyBack();
 }
 

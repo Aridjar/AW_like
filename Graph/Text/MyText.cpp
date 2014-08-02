@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 10:55:19 2014 cedric paumard
-// Last update Tue Jul 29 20:43:51 2014 cedric paumard
+// Last update Sat Aug  2 12:36:30 2014 cedric paumard
 //
 
 #include "MyText.hh"
@@ -35,21 +35,39 @@ void	MyText::initMenu()
   this->_menu.setFont(this->_font);
   this->_menu.setString(TEXT_MENU);
   this->_menu.setCharacterSize(80);
+
   this->_game.setFont(this->_font);
   this->_game.setString(TEXT_GAME);
+  this->_game.setCharacterSize(60);
+
   this->_unit.setFont(this->_font);
   this->_unit.setString(TEXT_UNIT);
+  this->_unit.setCharacterSize(60);
+
   this->_ai.setFont(this->_font);
   this->_ai.setString(TEXT_AI);
+  this->_ai.setCharacterSize(60);
+
   this->_fog.setFont(this->_font);
   this->_fog.setString(TEXT_FOG);
+  this->_fog.setCharacterSize(60);
+
+  this->_visu.setFont(this->_font);
+  this->_visu.setString(TEXT_VISU);
+  this->_visu.setCharacterSize(60);
+
   this->_launch.setFont(this->_font);
   this->_launch.setString(TEXT_LAUNCH);
+  this->_launch.setCharacterSize(60);
+
   this->_return.setFont(this->_font);
   this->_return.setString(TEXT_RETURN);
+  this->_return.setCharacterSize(60);
+
   this->_exit.setFont(this->_font);
   this->_exit.setString(TEXT_EXIT);
   this->_exit.setCharacterSize(80);
+
   this->_credit.setFont(this->_font);
   this->_credit.setString(TEXT_CRED);
   this->_credit.setCharacterSize(80);

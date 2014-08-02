@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Thu Jul 31 01:37:30 2014 cedric paumard
-// Last update Sat Aug  2 03:12:47 2014 cedric paumard
+// Last update Sat Aug  2 13:14:03 2014 cedric paumard
 //
 
 #ifndef MENUBASE_HPP_
@@ -67,6 +67,8 @@ public:
     const sf::Texture	&back = this->_texture.getMenuBackOpen();
     const sf::Texture	&sele = this->_texture.getMenuSelect();
     sf::Sprite		sprite;
+
+    this->_font->clear();
 
     sprite.setTexture(back);
     sprite.setPosition(sf::Vector2f(0, 0));

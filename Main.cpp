@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 16:03:52 2014 cedric paumard
-// Last update Fri Aug  1 23:52:52 2014 cedric paumard
+// Last update Sat Aug  2 11:53:19 2014 cedric paumard
 //
 
 #include "Main.hh"
@@ -34,8 +34,7 @@ void	Main::drawMenu()
 
   for(std::list<sf::Sprite>::iterator it = tmp.begin(); it != tmp.end(); ++it)
     this->_window.draw(*it);
-  for(std::list<sf::Sprite>::iterator it_sel = tmp_sel.begin(); it_sel != tmp_sel.end(); ++it_sel)
-    this->_window.draw(*it_sel);
+  this->_window.draw(tmp_sel.front());
   for(std::list<sf::Text>::iterator it_txt = tmp_txt.begin(); it_txt != tmp_txt.end(); ++it_txt)
     this->_window.draw(*it_txt);
 }

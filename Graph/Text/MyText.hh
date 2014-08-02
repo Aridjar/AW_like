@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 14:58:40 2014 cedric paumard
-// Last update Wed Jul 30 16:32:13 2014 cedric paumard
+// Last update Sat Aug  2 12:39:01 2014 cedric paumard
 //
 
 #ifndef MYTEXT_HH_
@@ -25,10 +25,11 @@
 # define FRONT_FILE	"External_Objects/Font/Prosto_Sans_Bold.otf"
 
 # define TEXT_MENU	"New Game"
-# define TEXT_GAME	"map"
-# define TEXT_UNIT	"unit"
+# define TEXT_GAME	"Map"
+# define TEXT_UNIT	"Unit"
 # define TEXT_AI	"AI"
 # define TEXT_FOG	"Fog"
+# define TEXT_VISU	"Rendering"
 # define TEXT_LAUNCH	"Launch"
 # define TEXT_RETURN	"Return"
 # define TEXT_EXIT	"Exit"
@@ -71,6 +72,7 @@ class MyText
   sf::Text	_unit;
   sf::Text	_ai;
   sf::Text	_fog;
+  sf::Text	_visu;
   sf::Text	_launch;
   sf::Text	_return;
   sf::Text	_exit;
@@ -116,6 +118,7 @@ public:
   const sf::Text	&getUnit(void)const;
   const sf::Text	&getAI(void)const;
   const sf::Text	&getFog(void)const;
+  const sf::Text	&getVisu(void)const;
   const sf::Text	&getLaunch(void)const;
   const sf::Text	&getReturn(void)const;
   const sf::Text	&getExit(void)const;
