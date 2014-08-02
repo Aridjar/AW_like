@@ -5,11 +5,11 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 17:42:38 2014 cedric paumard
-// Last update Fri Aug  1 23:35:25 2014 cedric paumard
+// Last update Sat Aug  2 03:12:56 2014 cedric paumard
 //
 
-#include "Menu.hh"
 #include "MenuBase.hpp"
+#include "MenuChoose.hpp"
 #include <iostream>
 
 Menu::Menu()
@@ -29,50 +29,45 @@ Menu	&Menu::operator=(Menu &menu)
   return (menu);
 }
 
-std::list<sf::Sprite>	&Menu::modifyCurseur(int key)
+int	Menu::modifyBack()
 {
-  this->_curseur = this->_graph[this->_position]->modifyCurseur(key);
-  return (this->_curseur);
+  return (this->_graph[this->_position]->modifyBack());
 }
 
-std::list<sf::Text>	&Menu::modifyText()
+e_position_menu	Menu::modifyCurseur(int key)
 {
-  this->_text = _graph[this->_position]->modifyText();
-  return (this->_text);
+  return (this->_graph[this->_position]->modifyCurseur(key));
+}
+
+int	Menu::modifyText()
+{
+  return (this->_graph[this->_position]->modifyText());
 }
 
 int	Menu::keyPressed(int key)
 {
+  int	tmp = this->_position;
+
   if (key == sf::Keyboard::Up || key == sf::Keyboard::Down)
     this->modifyCurseur(key);
   else if (key == sf::Keyboard::Return || key == sf::Keyboard::Escape)
     {
-      this->modifyCurseur(key);
-      if (this->_curseur.size() == 0)
+      if ((this->_position = this->modifyCurseur(key)) == PM_ERR)
 	return (-1);
+      else if (this->_position != tmp)
+	return (this->modifyBack());
     }
   else if  (key == sf::Keyboard::Left || key == sf::Keyboard::Right)
     std::cout << "Hard" << std::endl;
-  // this->modifyInfo(key);
+  
   return (0);
 }
 
 void	Menu::initGame()
 {
-  const sf::Texture	&back = this->_texture.getMenuBackOpen();
-  const	sf::Texture	&sele = this->_texture.getMenuSelect();
-  sf::Sprite		sprite;
-  
-  this->_graph.push_back(new MenuBase());
-
-  sprite.setTexture(back);
-  sprite.setPosition(sf::Vector2f(0, 0));
-  this->_font.push_front(sprite);
-
-  sprite.setTexture(sele);
-  sprite.setPosition(sf::Vector2f(DIS_MENU_SELECT_X, DIS_MENU_SELECT_Y));
-  this->_curseur.push_front(sprite);
-  this->modifyText();
+  this->_graph.push_back(new MenuBase(&this->_font, &this->_curseur, &this->_text));
+  // this->_graph.push_back(new MenuChoose(&this->_font, &this->_curseur, &this->_text));
+  this->modifyBack();
 }
 
 const std::list<sf::Sprite>	&Menu::getBack(void)const

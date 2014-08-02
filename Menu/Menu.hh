@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 15:48:23 2014 cedric paumard
-// Last update Fri Aug  1 23:09:49 2014 cedric paumard
+// Last update Sat Aug  2 02:39:14 2014 cedric paumard
 //
 
 #ifndef MENU_HH_
@@ -38,6 +38,7 @@
 
 enum	e_position_menu
   {
+    PM_ERR = -1,
     PM_ENTER = 0,
     PM_CHOOSE,
     PM_MAP,
@@ -50,14 +51,14 @@ enum	e_position_menu
 
 class	Menu
 {
+  std::list<sf::Sprite>	_font;
+  std::list<sf::Sprite>	_curseur;   //list curseur (push_front && pop front, n'afficher que le premier)
+  std::list<sf::Text>	_text;
   std::vector<Menu*>	_graph;
   sf::RenderWindow	*_window;
   e_position_menu	_position;
 
 protected:
-  std::list<sf::Sprite>	_font;
-  std::list<sf::Sprite>	_curseur;   //list curseur (push_front && pop front, n'afficher que le premier)
-  std::list<sf::Text>	_text;
   std::list<int>	_pos2;
   MyText		_all_text;
   MyTexture		_texture;
@@ -69,9 +70,10 @@ public:
 
   Menu				&operator=(Menu&);
   void				initGame();
-  virtual std::list<sf::Text>	&modifyText();
-  virtual std::list<sf::Sprite>	&modifyCurseur(int);
+  virtual int			modifyText();
+  virtual e_position_menu	modifyCurseur(int);
   virtual int			keyPressed(int);
+  virtual int			modifyBack();
 
   // void			keyPressed(int);
 
