@@ -5,11 +5,11 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 17:42:38 2014 cedric paumard
-// Last update Sat Aug  2 11:56:54 2014 cedric paumard
+// Last update Mon Aug  4 14:25:55 2014 cedric paumard
 //
 
 #include "MenuBase.hpp"
-#include "MenuChoose.hpp"
+#include "MenuChoose.hh"
 #include <iostream>
 
 Menu::Menu()
@@ -27,6 +27,11 @@ Menu::~Menu()
 Menu	&Menu::operator=(Menu &menu)
 {
   return (menu);
+}
+
+void	Menu::modifyInfo(int key)
+{
+  this->_graph[this->_position]->modifyInfo(key);
 }
 
 int	Menu::modifyBack()
@@ -58,15 +63,15 @@ int	Menu::keyPressed(int key)
 	return (this->modifyBack());
     }
   else if  (key == sf::Keyboard::Left || key == sf::Keyboard::Right)
-    std::cout << "Hard" << std::endl;
-  
+    this->modifyInfo(key);
   return (0);
 }
 
 void	Menu::initGame()
 {
   this->_graph.push_back(new MenuBase(&this->_font, &this->_curseur, &this->_text));
-  this->_graph.push_back(new MenuChoose(&this->_font, &this->_curseur, &this->_text));
+  this->_graph.push_back(new MenuChoose(&this->_font, &this->_curseur, &this->_text,
+					&this->_param, &this->_mod));
   this->modifyBack();
 }
 
@@ -83,6 +88,16 @@ const std::list<sf::Sprite>	&Menu::getCurs(void)const
 const std::list<sf::Text>	&Menu::getText(void)const
 {
   return (this->_text);
+}
+
+const std::vector<sf::Text>	&Menu::getMod(void)const
+{
+  return (this->_mod);
+}
+
+const e_position_menu		&Menu::getPosition(void)const
+{
+  return (this->_position);
 }
 
 void	Menu::setWindow(sf::RenderWindow &_window)

@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Jul 28 10:55:19 2014 cedric paumard
-// Last update Sat Aug  2 12:36:30 2014 cedric paumard
+// Last update Mon Aug  4 14:56:53 2014 cedric paumard
 //
 
 #include "MyText.hh"
@@ -121,4 +121,9 @@ void	MyText::initOther()
   this->_ai_hard.setString(TEXT_AI_HARD);
   this->_ai_player.setFont(this->_font);
   this->_ai_player.setString(TEXT_PLAYER);
+}
+
+const sf::Font	&MyText::getFont(void)const
+{
+  return (this->_font);
 }

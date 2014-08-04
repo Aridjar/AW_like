@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 16:03:52 2014 cedric paumard
-// Last update Sat Aug  2 11:53:19 2014 cedric paumard
+// Last update Mon Aug  4 15:04:01 2014 cedric paumard
 //
 
 #include "Main.hh"
@@ -28,6 +28,7 @@ Main::~Main()
 
 void	Main::drawMenu()
 {
+  std::vector<sf::Text>	tmp_mod(this->_menu.getMod());
   std::list<sf::Sprite>	tmp(this->_menu.getBack());
   std::list<sf::Sprite>	tmp_sel(this->_menu.getCurs());
   std::list<sf::Text>	tmp_txt(this->_menu.getText());
@@ -37,6 +38,11 @@ void	Main::drawMenu()
   this->_window.draw(tmp_sel.front());
   for(std::list<sf::Text>::iterator it_txt = tmp_txt.begin(); it_txt != tmp_txt.end(); ++it_txt)
     this->_window.draw(*it_txt);
+  if (this->_menu.getPosition() != PM_ENTER)
+    {
+      for(std::vector<sf::Text>::iterator it_mod = tmp_mod.begin(); it_mod != tmp_mod.end(); ++it_mod)
+	this->_window.draw(*it_mod);
+    }
 }
 
 int	Main::beginGame()

@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Thu Jul 31 01:37:30 2014 cedric paumard
-// Last update Sat Aug  2 13:14:03 2014 cedric paumard
+// Last update Sun Aug  3 22:08:34 2014 cedric paumard
 //
 
 #ifndef MENUBASE_HPP_
@@ -45,6 +45,8 @@ public:
   };
 
   ~MenuBase(){};
+
+  void			modifyInfo(int key){(void)key;};
 
   int			modifyText()
   {

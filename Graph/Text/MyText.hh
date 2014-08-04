@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 14:58:40 2014 cedric paumard
-// Last update Sat Aug  2 12:39:01 2014 cedric paumard
+// Last update Mon Aug  4 14:56:17 2014 cedric paumard
 //
 
 #ifndef MYTEXT_HH_
@@ -111,6 +111,7 @@ public:
   ~MyText();
 
   MyText &operator=(MyText&);
+  const sf::Font	&getFont(void)const;
 
   //MyTextMenuGetter.cpp
   const sf::Text	&getMenu(void)const;

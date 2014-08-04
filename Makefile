@@ -5,14 +5,16 @@
 ## Login   <paumar_a@epitech.net>
 ## 
 ## Started on  Sun Jul 20 00:53:21 2014 cedric paumard
-## Last update Wed Jul 30 16:24:23 2014 cedric paumard
+## Last update Mon Aug  4 14:09:38 2014 cedric paumard
 ##
 
 SRCS	=	main.cpp \
 		Main.cpp \
 		Menu/Menu.cpp \
+		Menu/MenuChoose.cpp \
 		Menu/Param.cpp \
 		Menu/Param_getter.cpp \
+		Menu/Param_setter.cpp \
 		Event/MyEvent.cpp \
 		Graph/Texture/MyTexture.cpp \
 		Graph/Texture/MenuGetter.cpp \
