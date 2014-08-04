@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 17:43:53 2014 cedric paumard
-// Last update Mon Aug  4 02:41:51 2014 cedric paumard
+// Last update Mon Aug  4 17:30:14 2014 cedric paumard
 //
 
 #include "Param.hh"
@@ -19,7 +19,6 @@ Param::Param()
   this->_size_y = MIN_SIZE_Y;
 
   this->_type_name = MT_CITY;
-  this->_ai = AI_EASY;
   this->_fog = BEGIN_FOG;
 
   this->initMapList();
@@ -38,6 +37,11 @@ void	Param::initMapList()
   this->_list_unit.push_back(std::make_pair(std::string(NAME_UNIT_MAP), std::string(BEGIN_UNIT)));
   this->_list_unit.push_back(std::make_pair(std::string(NAME_MAP_RAND), std::string("\0")));
   this->_list_unit.push_back(std::make_pair(std::string(NAME_MAP_CUST), std::string("\0")));
+
+  this->_ai.push_back(std::make_pair(AI_EASY, std::string("Easy")));
+  this->_ai.push_back(std::make_pair(AI_MEDIUM, std::string("Medium")));
+  this->_ai.push_back(std::make_pair(AI_HARD, std::string("Hard")));
+  this->_ai.push_back(std::make_pair(AI_PLAYER, std::string("Player")));
 }
 
 void	Param::assignUnit(const std::string unit)

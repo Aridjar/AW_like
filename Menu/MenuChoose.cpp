@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Aug  4 14:05:38 2014 cedric paumard
-// Last update Mon Aug  4 15:36:53 2014 cedric paumard
+// Last update Mon Aug  4 17:29:00 2014 cedric paumard
 //
 
 #include "MenuChoose.hh"
@@ -64,7 +64,10 @@ void			MenuChoose::leftArrow()
       this->_param->getListUnit().pop_back();
     }  
   else if (this->_pos2.front() == 2)
-    this->_param->setAi(this->_param->getAi() - 1);
+    {
+      this->_param->getAi().push_front(this->_param->getAi().back());
+      this->_param->getAi().pop_back();
+    }  
   else if (this->_pos2.front() == 3)
     this->_param->setFog();
 }
@@ -82,7 +85,10 @@ void			MenuChoose::rightArrow()
       this->_param->getListUnit().pop_front();
     }  
   else if (this->_pos2.front() == 2)
-    this->_param->setAi(this->_param->getAi() + 1);
+    {
+      this->_param->getAi().push_back(this->_param->getAi().front());
+      this->_param->getAi().pop_front();
+    }
   else if (this->_pos2.front() == 3)
     this->_param->setFog();
 }
@@ -147,8 +153,7 @@ void			MenuChoose::modifyInfo(int key)
   if (this->_pos2.front() == 1 || key == -1)
     this->putInfoText(this->_param->getListUnit().front().first, 1);
   if (this->_pos2.front() == 2 || key == -1)
-    this->putInfoText("Faire une MAP", 2);
-    // this->putInfoText(this->_param->getAi(), 2);
+    this->putInfoText(this->_param->getAi().front().second, 2);
   if (this->_pos2.front() == 3 || key == -1)
     {
       if (this->_param->getFog() == true)

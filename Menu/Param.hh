@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Fri Jul 25 18:05:59 2014 cedric paumard
-// Last update Sun Aug  3 12:04:27 2014 cedric paumard
+// Last update Mon Aug  4 17:29:53 2014 cedric paumard
 //
 
 #ifndef PARAM_HH_
@@ -62,7 +62,7 @@ enum e_ai
   {
     AI_EASY = 0,
     AI_MEDIUM,
-    AI_STRONG,
+    AI_HARD,
     AI_PLAYER
   };
 
@@ -82,11 +82,11 @@ class	Param
 {
   std::list<std::pair<std::string, std::string> >	_list_map;
   std::list<std::pair<std::string, std::string> >	_list_unit;
+  std::list<std::pair<e_ai, std::string> >		_ai;
 
   std::map<std::string, int>	_unit; // syntaxe : MAP_NAME.uni
   std::string			_map; // syntaxe : MAP_NAME.map
   e_map_type			_type_name;
-  e_ai				_ai;
   bool				_fog;
   int				_size_x;
   int				_size_y;
@@ -103,20 +103,19 @@ public:
   // Param operator-(const int);
 
   // the following fonctions are in the Param_getter.cpp file
-  std::list<std::pair<std::string,std::string> >	&getListMap(void);
-  std::list<std::pair<std::string,std::string> >	&getListUnit(void);
+  std::list<std::pair<std::string, std::string> >	&getListMap(void);
+  std::list<std::pair<std::string, std::string> >	&getListUnit(void);
+  std::list<std::pair<e_ai, std::string> >		&getAi(void);
 
   std::map<std::string, int>	&getUnit(void);
   std::string			&getMap(void);
   e_map_type			&getTypeName(void);
-  e_ai				&getAi(void);
   bool				&getFog(void);
   int				&getSizeX(void);
   int				&getSizeY(void);
 
   // the following fonctions are in the Param_setter.cpp file
   void				setFog();
-  void				setAi(int);
 };
 
 #endif /* !PARAM_HH_ */
