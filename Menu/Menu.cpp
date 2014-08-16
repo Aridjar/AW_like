@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 17:42:38 2014 cedric paumard
-// Last update Mon Aug  4 14:25:55 2014 cedric paumard
+// Last update Fri Aug 15 22:06:40 2014 cedric paumard
 //
 
 #include "MenuBase.hpp"
@@ -51,16 +51,20 @@ int	Menu::modifyText()
 
 int	Menu::keyPressed(int key)
 {
-  int	tmp = this->_position;
-
+  this->_last_position = this->_position;
   if (key == sf::Keyboard::Up || key == sf::Keyboard::Down)
     this->modifyCurseur(key);
   else if (key == sf::Keyboard::Return || key == sf::Keyboard::Escape)
     {
       if ((this->_position = this->modifyCurseur(key)) == PM_ERR)
 	return (-1);
-      else if (this->_position != tmp)
+      else if (this->_position != this->_last_position && this->_position != PM_RENDER)
 	return (this->modifyBack());
+      else if (this->_position == PM_RENDER)
+	{
+	  this->_render->prepareMap();
+	  return (this->_position);
+	}   
     }
   else if  (key == sf::Keyboard::Left || key == sf::Keyboard::Right)
     this->modifyInfo(key);
@@ -100,17 +104,37 @@ const e_position_menu		&Menu::getPosition(void)const
   return (this->_position);
 }
 
-void	Menu::setWindow(sf::RenderWindow &_window)
+const e_position_menu		&Menu::getLastPosition(void)const
 {
-  this->_window = &_window;
+  return (this->_last_position);
 }
 
-void	Menu::setText(MyText &_text)
+Param				&Menu::getParam(void)
 {
-  this->_all_text = _text;
+  return (this->_param);
 }
 
-void	Menu::setTexture(MyTexture &_texture)
+void	Menu::setRender(Render &render)
 {
-  this->_texture = _texture;
+  this->_render = &render;
+}
+
+void	Menu::setWindow(sf::RenderWindow &window)
+{
+  this->_window = &window;
+}
+
+void	Menu::setText(MyText &text)
+{
+  this->_all_text = text;
+}
+
+void	Menu::setTexture(MyTexture &texture)
+{
+  this->_texture = texture;
+}
+
+void	Menu::setPosition(e_position_menu position)
+{
+  this->_position = position;
 }

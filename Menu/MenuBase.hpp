@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Thu Jul 31 01:37:30 2014 cedric paumard
-// Last update Sun Aug  3 22:08:34 2014 cedric paumard
+// Last update Wed Aug  6 11:10:16 2014 cedric paumard
 //
 
 #ifndef MENUBASE_HPP_
@@ -30,7 +30,7 @@
 ** class
 */
 
-class MenuBase : public Menu
+class	MenuBase : public Menu
 {
   std::list<sf::Sprite>	*_font;
   std::list<sf::Sprite>	*_curseur;   //list curseur (push_front && pop front, n'afficher que le premier)

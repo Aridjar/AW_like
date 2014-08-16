@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sat Jul 26 15:48:23 2014 cedric paumard
-// Last update Mon Aug  4 14:22:46 2014 cedric paumard
+// Last update Fri Aug 15 22:02:33 2014 cedric paumard
 //
 
 #ifndef MENU_HH_
@@ -15,7 +15,7 @@
 ** includes
 */
 
-# include "Param.hh"
+# include "Render.hh"
 # include "MyTexture.hh"
 # include "MyText.hh"
 
@@ -40,6 +40,7 @@ enum	e_position_menu
     PM_CHOOSE,
     PM_MAP,
     PM_UNIT,
+    PM_RENDER,
   };
 
 /*
@@ -55,6 +56,8 @@ class	Menu
   std::vector<Menu*>	_graph;
   sf::RenderWindow	*_window;
   e_position_menu	_position;
+  e_position_menu	_last_position;
+  Render		*_render;
   Param			_param;
 
 protected:
@@ -82,8 +85,12 @@ public:
   const std::list<sf::Sprite>	&getCurs(void)const;
   const std::list<sf::Text>	&getText(void)const;
   const	e_position_menu		&getPosition(void)const;
+  const	e_position_menu		&getLastPosition(void)const;
+  Param		       		&getParam(void);
 
   //Setters
+  void				setPosition(e_position_menu);
+  void				setRender(Render&);
   void				setWindow(sf::RenderWindow&);
   void				setTexture(MyTexture&);
   void				setText(MyText&);

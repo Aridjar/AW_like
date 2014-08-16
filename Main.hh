@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Fri Jul 25 18:08:05 2014 cedric paumard
-// Last update Wed Jul 30 18:33:29 2014 cedric paumard
+// Last update Wed Aug  6 14:36:03 2014 cedric paumard
 //
 
 #ifndef MAIN_HH_
@@ -37,6 +37,7 @@ class	Main
   MyTexture		_texture;
   MyEvent		_event;
   MyText		_text;
+  Render		_render;
   Menu			_menu;
 
 public:

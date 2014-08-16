@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Mon Aug  4 14:05:38 2014 cedric paumard
-// Last update Mon Aug  4 17:29:00 2014 cedric paumard
+// Last update Sat Aug 16 02:32:36 2014 cedric paumard
 //
 
 #include "MenuChoose.hh"
@@ -131,8 +131,7 @@ void			MenuChoose::putInfoText(std::string str, unsigned int pos)
   text.setString(str);
   text.setCharacterSize(60);
   text_rect = text.getLocalBounds();
-  text.setOrigin(text_rect.left + text_rect.width/2.0f,
-		 0);
+  text.setOrigin(text_rect.left + text_rect.width/2.0f, 0);
   text.setPosition(sf::Vector2f(1180, 110 + 120 * pos));
   if (this->_mod->size() == pos)
     this->_mod->push_back(text);
@@ -196,6 +195,7 @@ e_position_menu		MenuChoose::execEnter()
     {
       this->_param->assignUnit(this->_param->getListUnit().front().second);
       this->_param->assignMap(this->_param->getListMap().front().second);
+      return (PM_RENDER);
     }
   else if (this->_pos2.front() == 5)
     std::cout << "Launch Game" << std::endl;

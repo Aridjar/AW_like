@@ -5,7 +5,7 @@
 ## Login   <paumar_a@epitech.net>
 ## 
 ## Started on  Sun Jul 20 00:53:21 2014 cedric paumard
-## Last update Mon Aug  4 14:09:38 2014 cedric paumard
+## Last update Wed Aug  6 19:26:11 2014 cedric paumard
 ##
 
 SRCS	=	main.cpp \
@@ -15,6 +15,7 @@ SRCS	=	main.cpp \
 		Menu/Param.cpp \
 		Menu/Param_getter.cpp \
 		Menu/Param_setter.cpp \
+		Map/Render.cpp \
 		Event/MyEvent.cpp \
 		Graph/Texture/MyTexture.cpp \
 		Graph/Texture/MenuGetter.cpp \
@@ -29,7 +30,7 @@ OBJ	=	$(SRCS:.cpp=.o)
 NAME	=	shootandrun
 
 CXXFLAGS+=	-Wall -Wextra -Werror
-CXXFLAGS+=	-I Menu -I External_Objects/SFML-2.1/Include/SFML -I Graph/Text -I Graph/Texture -I Event
+CXXFLAGS+=	-I Menu -I External_Objects/SFML-2.1/Include/SFML -I Graph/Text -I Graph/Texture -I Event -I Map
 
 all	:	$(NAME)
 

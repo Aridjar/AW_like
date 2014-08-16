@@ -5,7 +5,7 @@
 // Login   <paumar_a@epitech.net>
 // 
 // Started on  Sun Jul 27 14:58:40 2014 cedric paumard
-// Last update Mon Aug  4 14:56:17 2014 cedric paumard
+// Last update Fri Aug  8 13:50:30 2014 cedric paumard
 //
 
 #ifndef MYTEXT_HH_
